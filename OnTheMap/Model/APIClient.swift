@@ -21,8 +21,7 @@ class APIClient {
         case getStudentLocation
         case createStudentLocation
         case updateStudentLocation
-        case createSession
-        case deleteSession
+        case handleSession
         case getUserDetails
         
         var stringValue: String {
@@ -30,15 +29,79 @@ class APIClient {
             case .getStudentLocation: return Endpoints.base + "/StudentLocation"
             case .createStudentLocation: return Endpoints.base + "/StudentLocation"
             case .updateStudentLocation: return Endpoints.base + "/StudentLocation/"
-            case .createSession: return Endpoints.base + ""
-            case .deleteSession: return Endpoints.base + ""
-            case .getUserDetails: return Endpoints.base + "/users/"
+            case .handleSession: return Endpoints.base + "/session"
+            case .getUserDetails: return Endpoints.base + "/users/" + ""
             }
         }
         
         var url: URL {
             return URL(string: stringValue)!
         }
+    }
+    
+    // handleSession
+    class func login(username: String, password: String, completion: @escaping (SessionDetails?, Error?) -> Void) {
+        var request = URLRequest(url: Endpoints.handleSession.url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        // TODO - encoding a JSON body from a string, can also use a Codable struct
+        let reqString = "{\"udacity\": {\"username\": \"" + username + "\", \"password\": \"" + password + "\"}}"
+        // print(reqString)
+        request.httpBody = reqString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            // print("login: data: ", data!)
+            // print(String(data: data!, encoding: .utf8)!)
+            // print("login: response: ", response!)
+            guard (data != nil || error != nil) else { // Handle error…
+                print("login: Error response received with login http request")
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+                return
+            }
+            let newData = removeExtraDataFromResponse(originalData: data)
+            print(String(data: newData, encoding: .utf8)!)
+            let decoder = JSONDecoder()
+            do {
+                let responseObject = try decoder.decode(SessionDetails.self, from: newData)
+                // print("login: responseObject: ", responseObject)
+                Auth.sessionId = responseObject.session.id
+                Auth.accountKey = responseObject.account.key
+                print("login: auth: ", Auth.sessionId, ", ", Auth.accountKey)
+                DispatchQueue.main.async {
+                    completion(responseObject, nil)
+                }
+            } catch {
+                print("login: Error response received with decoding")
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    // handleSession
+    class func logout() {
+        var request = URLRequest(url: Endpoints.handleSession.url)
+        request.httpMethod = "DELETE"
+        var xsrfCookie: HTTPCookie? = nil
+        for cookie in HTTPCookieStorage.shared.cookies! {
+            if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+        }
+        if let xsrfCookie = xsrfCookie {
+            request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+        }
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if error != nil { // Handle error…
+                print("Error response received with logout http request")
+                return
+            }
+            let newData = removeExtraDataFromResponse(originalData: data) /* subset response data! */
+            print(String(data: newData, encoding: .utf8)!)
+        }
+        task.resume()
     }
     
     class func getStudentLocation(completion: @escaping ([LocationResult]?, Error?) -> Void) {

@@ -11,5 +11,5 @@ import Foundation
 struct Session: Codable {
     
     let id: String
-    let expiration: Date
+    let expiration: String
 }
