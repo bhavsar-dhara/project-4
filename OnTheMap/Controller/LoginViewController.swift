@@ -30,12 +30,13 @@ class LoginViewController: UIViewController {
     }
     
     func handleLoginResponse(success: SessionDetails?, error: Error?) {
+        setLoggingIn(false)
         if success != nil {
             print("result obtained")
+            performSegue(withIdentifier: "completeLogin", sender: nil)
         } else {
             showLoginFailure(message: error?.localizedDescription ?? "")
         }
-         setLoggingIn(false)
     }
     
     func setLoggingIn(_ loggingIn: Bool) {

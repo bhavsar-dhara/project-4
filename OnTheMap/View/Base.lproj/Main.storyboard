@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="wuF-SF-rGD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zvI-RG-ObU">
                                 <rect key="frame" x="84.5" y="427" width="245" height="36"/>
@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="ANj-1K-mJT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FT6-BF-xgi">
                                 <rect key="frame" x="84.5" y="483" width="245" height="36"/>
@@ -106,14 +106,14 @@
                         <outlet property="loginBtn" destination="FT6-BF-xgi" id="i1t-6m-INj"/>
                         <outlet property="password" destination="zvI-RG-ObU" id="6Qh-yK-iIw"/>
                         <outlet property="signupTextView" destination="CJb-oi-0cV" id="mlt-z1-wnT"/>
-                        <segue destination="quP-8O-BRh" kind="showDetail" identifier="completeLogin" id="Oha-AL-NnR"/>
+                        <segue destination="quP-8O-BRh" kind="presentation" identifier="completeLogin" id="Oha-AL-NnR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-994.20289855072474" y="128.57142857142856"/>
         </scene>
-        <!--Root View Controller-->
+        <!--On the Map-->
         <scene sceneID="31E-Fr-8LM">
             <objects>
                 <tableViewController id="bi0-S4-DvT" sceneMemberID="viewController">
@@ -136,7 +136,7 @@
                             <outlet property="delegate" destination="bi0-S4-DvT" id="ydR-tX-2Rg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="4sg-YF-Dko"/>
+                    <navigationItem key="navigationItem" title="On the Map" id="4sg-YF-Dko"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qx0-Gv-dh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,7 +146,7 @@
         <scene sceneID="ie5-p9-yr7">
             <objects>
                 <navigationController title="Table View" id="Xfl-Sv-jqk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TableView" selectedImage="Icon_listview_deselected" id="nb3-aF-gBs"/>
+                    <tabBarItem key="tabBarItem" title="TableView" image="list.bullet" catalog="system" id="nb3-aF-gBs"/>
                     <navigationItem key="navigationItem" id="DBq-Eb-IvG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jPB-a4-d36">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -168,21 +168,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0XK-As-c1K">
-                                <rect key="frame" x="20" y="0.0" width="374" height="759"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0XK-As-c1K">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                             </mapView>
+                            <navigationBar contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eLd-JF-tPf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="0XK-As-c1K" firstAttribute="bottom" secondItem="Lbz-E4-Mvw" secondAttribute="bottom" id="2u4-kY-E3y"/>
-                            <constraint firstItem="Lbz-E4-Mvw" firstAttribute="trailing" secondItem="0XK-As-c1K" secondAttribute="trailing" constant="20" id="7gC-kb-NPx"/>
+                            <constraint firstItem="0XK-As-c1K" firstAttribute="trailing" secondItem="Lbz-E4-Mvw" secondAttribute="trailing" id="7gC-kb-NPx"/>
                             <constraint firstItem="0XK-As-c1K" firstAttribute="centerX" secondItem="KLI-3n-60u" secondAttribute="centerX" id="cvz-Ea-eQC"/>
-                            <constraint firstItem="0XK-As-c1K" firstAttribute="leading" secondItem="Lbz-E4-Mvw" secondAttribute="leading" constant="20" id="m8R-fL-h4f"/>
+                            <constraint firstItem="0XK-As-c1K" firstAttribute="leading" secondItem="Lbz-E4-Mvw" secondAttribute="leading" id="m8R-fL-h4f"/>
                             <constraint firstItem="0XK-As-c1K" firstAttribute="top" secondItem="Lbz-E4-Mvw" secondAttribute="top" id="mnF-0J-e34"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lbz-E4-Mvw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MapView" selectedImage="Icon_mapview_deselected" id="dr2-Vw-F3S"/>
+                    <tabBarItem key="tabBarItem" title="MapView" image="mappin" catalog="system" id="dr2-Vw-F3S"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyI-aJ-r6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -207,10 +211,25 @@
             </objects>
             <point key="canvasLocation" x="-225" y="129"/>
         </scene>
+        <!--Table View-->
+        <scene sceneID="rTl-BC-ekE">
+            <objects>
+                <navigationController title="Table View" id="RsG-i2-iBX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TableView" image="list.bullet" catalog="system" id="die-XF-8Rv"/>
+                    <navigationItem key="navigationItem" id="hTn-27-pct"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wis-2n-w09">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qc5-UV-KSK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="-547"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Icon_listview_deselected" width="75" height="50"/>
-        <image name="Icon_mapview_deselected" width="75" height="50"/>
         <image name="LogoU" width="62" height="62"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="mappin" catalog="system" width="105" height="128"/>
     </resources>
 </document>
