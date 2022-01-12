@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         email.text = ""
         password.text = ""
@@ -33,9 +32,18 @@ class LoginViewController: UIViewController {
         setLoggingIn(false)
         if success != nil {
             print("result obtained")
+            APIClient.getStudentLocation(completion: handleStudentResponse(success:error:))
             performSegue(withIdentifier: "completeLogin", sender: nil)
         } else {
             showLoginFailure(message: error?.localizedDescription ?? "")
+        }
+    }
+    
+    func handleStudentResponse(success: [LocationResult]?, error: Error?) {
+        if success != nil {
+            print(success?.count ?? 0)
+        } else {
+            print(error?.localizedDescription ?? "")
         }
     }
     

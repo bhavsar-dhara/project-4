@@ -116,7 +116,7 @@
         <!--On the Map-->
         <scene sceneID="31E-Fr-8LM">
             <objects>
-                <tableViewController id="bi0-S4-DvT" sceneMemberID="viewController">
+                <tableViewController id="bi0-S4-DvT" customClass="TableViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VQC-5w-4PJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,12 +140,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qx0-Gv-dh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="-348"/>
+            <point key="canvasLocation" x="1719" y="-348"/>
         </scene>
-        <!--Table View-->
+        <!--Table Nav View-->
         <scene sceneID="ie5-p9-yr7">
             <objects>
-                <navigationController title="Table View" id="Xfl-Sv-jqk" sceneMemberID="viewController">
+                <navigationController title="Table Nav View" id="Xfl-Sv-jqk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="TableView" image="list.bullet" catalog="system" id="nb3-aF-gBs"/>
                     <navigationItem key="navigationItem" id="DBq-Eb-IvG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jPB-a4-d36">
@@ -158,23 +158,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YK5-e3-OiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677" y="-348"/>
+            <point key="canvasLocation" x="746" y="-348"/>
         </scene>
         <!--Map View-->
         <scene sceneID="x6M-UQ-6jh">
             <objects>
-                <viewController title="Map View" id="iAl-tr-JxF" sceneMemberID="viewController">
+                <viewController title="Map View" id="iAl-tr-JxF" customClass="MapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KLI-3n-60u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0XK-As-c1K">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                             </mapView>
-                            <navigationBar contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eLd-JF-tPf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -187,10 +183,11 @@
                         <viewLayoutGuide key="safeArea" id="Lbz-E4-Mvw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="MapView" image="mappin" catalog="system" id="dr2-Vw-F3S"/>
+                    <navigationItem key="navigationItem" title="On the Map" id="ff2-di-zK4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyI-aJ-r6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="480"/>
+            <point key="canvasLocation" x="1720" y="493"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="f8q-FF-0qn">
@@ -203,7 +200,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="iAl-tr-JxF" kind="relationship" relationship="viewControllers" id="siO-F1-c8Q"/>
+                        <segue destination="RsG-i2-iBX" kind="relationship" relationship="viewControllers" id="OpM-BA-h62"/>
                         <segue destination="Xfl-Sv-jqk" kind="relationship" relationship="viewControllers" id="kOn-ah-WVm"/>
                     </connections>
                 </tabBarController>
@@ -211,20 +208,23 @@
             </objects>
             <point key="canvasLocation" x="-225" y="129"/>
         </scene>
-        <!--Table View-->
+        <!--Map Nav View-->
         <scene sceneID="rTl-BC-ekE">
             <objects>
-                <navigationController title="Table View" id="RsG-i2-iBX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TableView" image="list.bullet" catalog="system" id="die-XF-8Rv"/>
+                <navigationController title="Map Nav View" id="RsG-i2-iBX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="MapView" image="mappin" catalog="system" id="die-XF-8Rv"/>
                     <navigationItem key="navigationItem" id="hTn-27-pct"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wis-2n-w09">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="iAl-tr-JxF" kind="relationship" relationship="rootViewController" id="q5b-Oa-Y3h"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qc5-UV-KSK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="-547"/>
+            <point key="canvasLocation" x="746" y="493"/>
         </scene>
     </scenes>
     <resources>

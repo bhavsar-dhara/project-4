@@ -26,6 +26,8 @@
 		D6A9326D276CE176001F7170 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9326C276CE176001F7170 /* UserDetails.swift */; };
 		D6A9326F276CE228001F7170 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9326E276CE228001F7170 /* User.swift */; };
 		D6A932B42770E0AD001F7170 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A932B32770E0AD001F7170 /* LoginRequest.swift */; };
+		D6D04674278E6A2600B98210 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D04673278E6A2600B98210 /* TableViewController.swift */; };
+		D6D04676278E820A00B98210 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D04675278E820A00B98210 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		D6A9326C276CE176001F7170 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		D6A9326E276CE228001F7170 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6A932B32770E0AD001F7170 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		D6D04673278E6A2600B98210 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D6D04675278E820A00B98210 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				D661EC10271A1EF8003F124F /* LoginViewController.swift */,
+				D6D04673278E6A2600B98210 /* TableViewController.swift */,
+				D6D04675278E820A00B98210 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				D6A9326F276CE228001F7170 /* User.swift in Sources */,
 				D6A93263276BB611001F7170 /* Session.swift in Sources */,
 				D6A93265276BB7F2001F7170 /* SessionDetails.swift in Sources */,
+				D6D04674278E6A2600B98210 /* TableViewController.swift in Sources */,
 				D6A9325B276AEB82001F7170 /* StudentLocation.swift in Sources */,
 				D6A93269276CE069001F7170 /* LocationCreation.swift in Sources */,
 				D6A932B42770E0AD001F7170 /* LoginRequest.swift in Sources */,
@@ -354,6 +361,7 @@
 				D6A93267276CDA58001F7170 /* LocationResult.swift in Sources */,
 				D661EC0F271A1EF8003F124F /* SceneDelegate.swift in Sources */,
 				D6A93261276BB603001F7170 /* Account.swift in Sources */,
+				D6D04676278E820A00B98210 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
