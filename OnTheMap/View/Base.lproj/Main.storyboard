@@ -145,7 +145,7 @@
         <!--Table Nav View-->
         <scene sceneID="ie5-p9-yr7">
             <objects>
-                <navigationController title="Table Nav View" id="Xfl-Sv-jqk" sceneMemberID="viewController">
+                <navigationController title="Table Nav View" id="Xfl-Sv-jqk" customClass="CustomNavBarController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="TableView" image="list.bullet" catalog="system" id="nb3-aF-gBs"/>
                     <navigationItem key="navigationItem" id="DBq-Eb-IvG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jPB-a4-d36">
@@ -211,7 +211,7 @@
         <!--Map Nav View-->
         <scene sceneID="rTl-BC-ekE">
             <objects>
-                <navigationController title="Map Nav View" id="RsG-i2-iBX" sceneMemberID="viewController">
+                <navigationController title="Map Nav View" id="RsG-i2-iBX" customClass="CustomNavBarController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="MapView" image="mappin" catalog="system" id="die-XF-8Rv"/>
                     <navigationItem key="navigationItem" id="hTn-27-pct"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wis-2n-w09">
