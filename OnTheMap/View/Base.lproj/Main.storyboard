@@ -137,6 +137,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="On the Map" id="4sg-YF-Dko"/>
+                    <connections>
+                        <outlet property="tableView" destination="VQC-5w-4PJ" id="DMc-Qj-TaC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qx0-Gv-dh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,7 +150,9 @@
             <objects>
                 <navigationController title="Table Nav View" id="Xfl-Sv-jqk" customClass="CustomNavBarController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="TableView" image="list.bullet" catalog="system" id="nb3-aF-gBs"/>
-                    <navigationItem key="navigationItem" id="DBq-Eb-IvG"/>
+                    <navigationItem key="navigationItem" title="On the Map" id="DBq-Eb-IvG">
+                        <barButtonItem key="backBarButtonItem" title="LOGOUT" id="ObI-cB-RoV"/>
+                    </navigationItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jPB-a4-d36">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -213,7 +218,9 @@
             <objects>
                 <navigationController title="Map Nav View" id="RsG-i2-iBX" customClass="CustomNavBarController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="MapView" image="mappin" catalog="system" id="die-XF-8Rv"/>
-                    <navigationItem key="navigationItem" id="hTn-27-pct"/>
+                    <navigationItem key="navigationItem" title="On the Map" id="hTn-27-pct">
+                        <barButtonItem key="backBarButtonItem" title="LOGOUT" id="hsH-lJ-tdx"/>
+                    </navigationItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wis-2n-w09">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>

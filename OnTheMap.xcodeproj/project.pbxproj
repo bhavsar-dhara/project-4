@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D65C881E278FC6D800B0C1AB /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65C881D278FC6D800B0C1AB /* LocationModel.swift */; };
 		D661EC0D271A1EF8003F124F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661EC0C271A1EF8003F124F /* AppDelegate.swift */; };
 		D661EC0F271A1EF8003F124F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661EC0E271A1EF8003F124F /* SceneDelegate.swift */; };
 		D661EC11271A1EF8003F124F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661EC10271A1EF8003F124F /* LoginViewController.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D65C881D278FC6D800B0C1AB /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		D661EC09271A1EF8003F124F /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D661EC0C271A1EF8003F124F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D661EC0E271A1EF8003F124F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D65C881C278FC6B700B0C1AB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D65C881D278FC6D800B0C1AB /* LocationModel.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		D661EC00271A1EF8003F124F = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +190,7 @@
 		D661EC3E271A1F46003F124F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D65C881C278FC6B700B0C1AB /* Data */,
 				D6A9325F276BA35B001F7170 /* Request */,
 				D6A9325E276BA351001F7170 /* Response */,
 				D6A9325C276B9FE8001F7170 /* APIClient.swift */,
@@ -349,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D65C881E278FC6D800B0C1AB /* LocationModel.swift in Sources */,
 				D6A9326F276CE228001F7170 /* User.swift in Sources */,
 				D6A93263276BB611001F7170 /* Session.swift in Sources */,
 				D6D04678278E8A6E00B98210 /* CustomNavBarController.swift in Sources */,

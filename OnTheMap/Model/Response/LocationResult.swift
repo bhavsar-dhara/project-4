@@ -18,6 +18,6 @@ struct LocationResult: Codable {
     let mediaURL: String
     let latitude: Float
     let longitude: Float
-    let createdAt: Date
-    let updatedAt: Date
+    let createdAt: String
+    let updatedAt: String
 }
