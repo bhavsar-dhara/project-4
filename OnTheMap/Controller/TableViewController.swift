@@ -24,7 +24,7 @@ class TableViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // tableView.reloadData()
+        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,9 +54,14 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Table View Cell")!
+        // print("tableview ======== ", tableView)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell")!
         
-        _ = LocationModel.locationList[indexPath.row]
+        let location = LocationModel.locationList[indexPath.row]
+        
+        cell.textLabel?.text = location.firstName + " " + location.lastName
+        cell.detailTextLabel?.text = location.mapString
+        cell.imageView?.image = UIImage.init(named: "Icon_Pin")
         
         return cell
     }
