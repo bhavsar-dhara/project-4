@@ -23,10 +23,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.requestLocation()
-        }
-       
+
         // TODO Set initial location in Honolulu
         let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
         mapView.centerToLocation(initialLocation)
