@@ -52,7 +52,7 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - 40ac75426fd0dd43"
+                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - bcfec1a59904b7b3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -67,7 +67,7 @@
                   offsetFromSymbolStart = "110">
                </Location>
                <Location
-                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - 95009c44d4701177"
+                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - 695228a322a47b87"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -82,7 +82,7 @@
                   offsetFromSymbolStart = "118">
                </Location>
                <Location
-                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - a45db3deed55fe46"
+                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - 580f07391b819686"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -97,7 +97,7 @@
                   offsetFromSymbolStart = "18">
                </Location>
                <Location
-                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - f848551753724a77"
+                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - 41ae1f0a5a62087"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -112,7 +112,7 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - a6297c93e5ddafc8"
+                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - 5a7bc8741309c538"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -127,7 +127,7 @@
                   offsetFromSymbolStart = "291">
                </Location>
                <Location
-                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - d787900b5d09dd37"
+                  uuid = "D64FDF3F-2E0B-4EFD-B5FA-80A50ED203CA - 2bd524ecabddb7c7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -174,6 +174,22 @@
             endingLineNumber = "58"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C889F411-FA4C-44D9-BC23-1FDD4E2F30F1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OnTheMap/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -40,20 +40,21 @@ class APIClient {
     }
     
     // handleSession
-    class func login(username: String, password: String, completion: @escaping (SessionDetails?, Error?) -> Void) {
+    class func login(username: String, password: String, completion: @escaping (LoginResponse?, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.handleSession.url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         // TODO - encoding a JSON body from a string, can also use a Codable struct
         let reqString = "{\"udacity\": {\"username\": \"" + username + "\", \"password\": \"" + password + "\"}}"
-        // print(reqString)
+         print(reqString)
         request.httpBody = reqString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            // print("login: data: ", data!)
-            // print(String(data: data!, encoding: .utf8)!)
-            // print("login: response: ", response!)
-            guard (data != nil || error != nil) else { // Handle error…
+//            print("login: data: ", data!)
+//            print("login: decoded data: ", String(data: data!, encoding: .utf8)!)
+//            print("login: response: ", response!)
+            guard data != nil else { // Handle error…
+                // print("login: error: ", error!)
                 print("login: Error response received with login http request")
                 DispatchQueue.main.async {
                     completion(nil, error)
@@ -63,19 +64,33 @@ class APIClient {
             let newData = removeExtraDataFromResponse(originalData: data)
             print(String(data: newData, encoding: .utf8)!)
             let decoder = JSONDecoder()
+            var loginResponse: LoginResponse! = LoginResponse()
             do {
                 let responseObject = try decoder.decode(SessionDetails.self, from: newData)
                 // print("login: responseObject: ", responseObject)
                 Auth.sessionId = responseObject.session.id
                 Auth.accountKey = responseObject.account.key
                 print("login: auth: ", Auth.sessionId, ", ", Auth.accountKey)
+                loginResponse.sessionDetails = responseObject
                 DispatchQueue.main.async {
-                    completion(responseObject, nil)
+                    completion(loginResponse, nil)
                 }
             } catch {
                 print("login: Error response received with decoding")
-                DispatchQueue.main.async {
-                    completion(nil, error)
+                do {
+                    let errorResponse = try decoder.decode(ErrorResponse.self, from: newData)
+                    print("login: errorResponse: ", errorResponse)
+                    loginResponse.errorResponse = errorResponse
+                    DispatchQueue.main.async {
+                        completion(loginResponse, nil)
+                    }
+//                    DispatchQueue.main.async {
+//                        completion(nil, errorResponse)
+//                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        completion(nil, error)
+                    }
                 }
             }
         }
@@ -104,7 +119,7 @@ class APIClient {
         task.resume()
     }
     
-    class func getStudentLocation(completion: @escaping ([LocationResult]?, Error?) -> Void) {
+    class func getStudentLocation(completion: @escaping ([StudentInformation]?, Error?) -> Void) {
         let task = URLSession.shared.dataTask(with: Endpoints.getStudentLocation.url) { (data, response, error) in
             if error != nil {
                 // Handle error...

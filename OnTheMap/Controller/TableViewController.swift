@@ -31,7 +31,7 @@ class TableViewController: UIViewController {
 //         TODO
     }
     
-    func handleStudentResponse(success: [LocationResult]?, error: Error?) {
+    func handleStudentResponse(success: [StudentInformation]?, error: Error?) {
         if success != nil {
             print("TableVC", success?.count ?? 0)
             LocationModel.locationList = success!
@@ -60,7 +60,7 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
         let location = LocationModel.locationList[indexPath.row]
         
         cell.textLabel?.text = location.firstName + " " + location.lastName
-        cell.detailTextLabel?.text = location.mapString
+        cell.detailTextLabel?.text = location.mediaURL
         cell.imageView?.image = UIImage.init(named: "Icon_Pin")
         
         return cell

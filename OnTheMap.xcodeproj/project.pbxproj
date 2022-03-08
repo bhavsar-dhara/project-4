@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D65C881E278FC6D800B0C1AB /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65C881D278FC6D800B0C1AB /* LocationModel.swift */; };
+		D65EAF7D27D7C4F000A9332F /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EAF7C27D7C4F000A9332F /* ErrorResponse.swift */; };
+		D65EAF8227D7F9D300A9332F /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EAF8127D7F9D300A9332F /* LoginResponse.swift */; };
 		D661EC0D271A1EF8003F124F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661EC0C271A1EF8003F124F /* AppDelegate.swift */; };
 		D661EC0F271A1EF8003F124F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661EC0E271A1EF8003F124F /* SceneDelegate.swift */; };
 		D661EC11271A1EF8003F124F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661EC10271A1EF8003F124F /* LoginViewController.swift */; };
@@ -21,7 +23,7 @@
 		D6A93261276BB603001F7170 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A93260276BB603001F7170 /* Account.swift */; };
 		D6A93263276BB611001F7170 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A93262276BB611001F7170 /* Session.swift */; };
 		D6A93265276BB7F2001F7170 /* SessionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A93264276BB7F2001F7170 /* SessionDetails.swift */; };
-		D6A93267276CDA58001F7170 /* LocationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A93266276CDA58001F7170 /* LocationResult.swift */; };
+		D6A93267276CDA58001F7170 /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A93266276CDA58001F7170 /* StudentInformation.swift */; };
 		D6A93269276CE069001F7170 /* LocationCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A93268276CE069001F7170 /* LocationCreation.swift */; };
 		D6A9326B276CE08F001F7170 /* LocationUpdation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9326A276CE08F001F7170 /* LocationUpdation.swift */; };
 		D6A9326D276CE176001F7170 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9326C276CE176001F7170 /* UserDetails.swift */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		D65C881D278FC6D800B0C1AB /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		D65EAF7C27D7C4F000A9332F /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		D65EAF8127D7F9D300A9332F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		D661EC09271A1EF8003F124F /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D661EC0C271A1EF8003F124F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D661EC0E271A1EF8003F124F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +74,7 @@
 		D6A93260276BB603001F7170 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		D6A93262276BB611001F7170 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		D6A93264276BB7F2001F7170 /* SessionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetails.swift; sourceTree = "<group>"; };
-		D6A93266276CDA58001F7170 /* LocationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResult.swift; sourceTree = "<group>"; };
+		D6A93266276CDA58001F7170 /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		D6A93268276CE069001F7170 /* LocationCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreation.swift; sourceTree = "<group>"; };
 		D6A9326A276CE08F001F7170 /* LocationUpdation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUpdation.swift; sourceTree = "<group>"; };
 		D6A9326C276CE176001F7170 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
@@ -205,11 +209,13 @@
 				D6A93260276BB603001F7170 /* Account.swift */,
 				D6A93262276BB611001F7170 /* Session.swift */,
 				D6A93264276BB7F2001F7170 /* SessionDetails.swift */,
-				D6A93266276CDA58001F7170 /* LocationResult.swift */,
+				D6A93266276CDA58001F7170 /* StudentInformation.swift */,
 				D6A93268276CE069001F7170 /* LocationCreation.swift */,
 				D6A9326A276CE08F001F7170 /* LocationUpdation.swift */,
 				D6A9326C276CE176001F7170 /* UserDetails.swift */,
 				D6A9326E276CE228001F7170 /* User.swift */,
+				D65EAF7C27D7C4F000A9332F /* ErrorResponse.swift */,
+				D65EAF8127D7F9D300A9332F /* LoginResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -374,8 +380,10 @@
 				D661EC0D271A1EF8003F124F /* AppDelegate.swift in Sources */,
 				D6A9325D276B9FE8001F7170 /* APIClient.swift in Sources */,
 				D6A9326B276CE08F001F7170 /* LocationUpdation.swift in Sources */,
-				D6A93267276CDA58001F7170 /* LocationResult.swift in Sources */,
+				D65EAF8227D7F9D300A9332F /* LoginResponse.swift in Sources */,
+				D6A93267276CDA58001F7170 /* StudentInformation.swift in Sources */,
 				D661EC0F271A1EF8003F124F /* SceneDelegate.swift in Sources */,
+				D65EAF7D27D7C4F000A9332F /* ErrorResponse.swift in Sources */,
 				D6A93261276BB603001F7170 /* Account.swift in Sources */,
 				D6D04676278E820A00B98210 /* MapViewController.swift in Sources */,
 			);

@@ -106,7 +106,7 @@
                         <outlet property="loginBtn" destination="FT6-BF-xgi" id="i1t-6m-INj"/>
                         <outlet property="password" destination="zvI-RG-ObU" id="6Qh-yK-iIw"/>
                         <outlet property="signupTextView" destination="CJb-oi-0cV" id="mlt-z1-wnT"/>
-                        <segue destination="quP-8O-BRh" kind="presentation" identifier="completeLogin" id="Oha-AL-NnR"/>
+                        <segue destination="quP-8O-BRh" kind="show" identifier="completeLogin" id="Oha-AL-NnR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -153,7 +153,9 @@
                             <outlet property="delegate" destination="bi0-S4-DvT" id="ydR-tX-2Rg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="On the Map" id="4sg-YF-Dko"/>
+                    <navigationItem key="navigationItem" title="On the Map" id="4sg-YF-Dko">
+                        <barButtonItem key="backBarButtonItem" title="LOGOUT" id="knq-d8-txN"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="VQC-5w-4PJ" id="DMc-Qj-TaC"/>
                     </connections>
@@ -190,7 +192,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0XK-As-c1K">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0XK-As-c1K">
                                 <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                             </mapView>
                         </subviews>
@@ -205,7 +207,12 @@
                         <viewLayoutGuide key="safeArea" id="Lbz-E4-Mvw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="MapView" image="mappin" catalog="system" id="dr2-Vw-F3S"/>
-                    <navigationItem key="navigationItem" title="On the Map" id="ff2-di-zK4"/>
+                    <navigationItem key="navigationItem" title="On the Map" id="ff2-di-zK4">
+                        <barButtonItem key="backBarButtonItem" title="LOGOUT" id="5nV-pF-R6t"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="0XK-As-c1K" id="3gc-do-vMo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyI-aJ-r6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

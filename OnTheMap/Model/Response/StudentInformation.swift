@@ -1,5 +1,5 @@
 //
-//  LocationResult.swift
+//  StudentInformation.swift
 //  OnTheMap
 //
 //  Created by Dhara Bhavsar on 2021-12-17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LocationResult: Codable {
+struct StudentInformation: Codable {
     
     let objectId: String
     let uniqueKey: String

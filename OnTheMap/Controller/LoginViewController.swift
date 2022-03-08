@@ -25,15 +25,32 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginClick(_ sender: UIButton) {
         setLoggingIn(true)
+        
+        guard email.text != nil else {
+            print("email not provided")
+            showLoginFailure(message: "Please enter a value for email")
+            return
+        }
+        
+        guard password.text != nil else {
+            print("password not entered")
+            showLoginFailure(message: "Please enter a value for password")
+            return
+        }
+        
         APIClient.login(username: email.text ?? "", password: password.text ?? "", completion: handleLoginResponse(success:error:))
     }
     
-    func handleLoginResponse(success: SessionDetails?, error: Error?) {
+    func handleLoginResponse(success: LoginResponse?, error: Error?) {
         setLoggingIn(false)
-        if success != nil {
-            print("result obtained")
-            performSegue(withIdentifier: "completeLogin", sender: nil)
+        if success?.sessionDetails != nil {
+            print("handleLoginResponse: result obtained")
+            performSegue(withIdentifier: "completeLogin", sender: self)
+        } else if success?.errorResponse != nil {
+            print("handleLoginResponse: error received from API")
+            showLoginFailure(message: success?.errorResponse.error ?? "")
         } else {
+            print("handleLoginResponse: error: ", error!)
             showLoginFailure(message: error?.localizedDescription ?? "")
         }
     }

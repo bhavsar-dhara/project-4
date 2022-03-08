@@ -10,5 +10,5 @@ import Foundation
 
 class LocationModel {
     
-    static var locationList = [LocationResult]()
+    static var locationList = [StudentInformation]()
 }
