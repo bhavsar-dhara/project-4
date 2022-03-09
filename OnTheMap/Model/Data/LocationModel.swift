@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-class LocationModel {
+class LocationModel: NSObject {
     
     static var locationList = [StudentInformation]()
 }

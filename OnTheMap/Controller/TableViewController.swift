@@ -33,11 +33,11 @@ class TableViewController: UIViewController {
     
     func handleStudentResponse(success: [StudentInformation]?, error: Error?) {
         if success != nil {
-            print("TableVC", success?.count ?? 0)
+            print("TableVC: ", success?.count ?? 0)
             LocationModel.locationList = success!
             self.tableView.reloadData()
         } else {
-            print("TableVC", error?.localizedDescription ?? "")
+            print("TableVC: ", error?.localizedDescription ?? "")
         }
     }
     

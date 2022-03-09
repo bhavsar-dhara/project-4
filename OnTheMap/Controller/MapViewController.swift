@@ -25,15 +25,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         locationManager.requestWhenInUseAuthorization()
 
         // TODO Set initial location in Honolulu
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-        mapView.centerToLocation(initialLocation)
+//        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+//        mapView.centerToLocation(initialLocation)
     }
     
     func handleStudentResponse(success: [StudentInformation]?, error: Error?) {
         if success != nil {
-            print("MapVC", success?.count ?? 0)
+            print("MapVC: ", success?.count ?? 0)
+            LocationModel.locationList = success!
+            // TODO
+            var mapPoint: MapModel!
+            success?.forEach { info in
+                mapPoint = MapModel(name: info.firstName + " " + info.lastName, latitude: Double(info.latitude), longitude: Double(info.longitude), url: info.mapString)
+                MapLocationModel.locationList.append(mapPoint)
+            }
+            mapView.addAnnotations(MapLocationModel.locationList)
         } else {
-            print("MapVC", error?.localizedDescription ?? "")
+            print("MapVC: ", error?.localizedDescription ?? "")
         }
     }
     
