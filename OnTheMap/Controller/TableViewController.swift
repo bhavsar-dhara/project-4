@@ -27,6 +27,15 @@ class TableViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func logoutClick(_ sender: UIButton) {
+        APIClient.logout()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func refreshClick(_ sender: UIButton) {
+        APIClient.getStudentLocation(completion: handleStudentResponse(success:error:))
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //         TODO
     }
@@ -68,7 +77,8 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
-        performSegue(withIdentifier: "showDetail", sender: nil)
+        // TODO -< launch Safari & open link associated with the row
+//        performSegue(withIdentifier: "showDetail", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

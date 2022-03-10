@@ -21,6 +21,27 @@ class LoginViewController: UIViewController {
         
         email.text = ""
         password.text = ""
+        
+        let attributedString = NSMutableAttributedString(string: "Don't have an account? Sign Up")
+        let url = URL(string: "https://auth.udacity.com/sign-up?next=https://classroom.udacity.com")!
+
+        // Set the 'click here' substring to be the link
+        attributedString.setAttributes([.link: url], range: NSMakeRange(23, 7))
+
+        self.signupTextView.attributedText = attributedString
+        self.signupTextView.isUserInteractionEnabled = true
+        self.signupTextView.isEditable = false
+
+        // Set how links should appear: blue and underlined
+        self.signupTextView.linkTextAttributes = [
+            .foregroundColor: UIColor.blue,
+            .underlineStyle: NSUnderlineStyle.single.rawValue
+        ]
+    }
+    
+    @IBAction func signUp() {
+//        TODO
+//        UIApplication.shared.open(url)
     }
     
     @IBAction func loginClick(_ sender: UIButton) {
@@ -45,6 +66,8 @@ class LoginViewController: UIViewController {
         setLoggingIn(false)
         if success?.sessionDetails != nil {
             print("handleLoginResponse: result obtained")
+            email.text = ""
+            password.text = ""
             performSegue(withIdentifier: "completeLogin", sender: self)
         } else if success?.errorResponse != nil {
             print("handleLoginResponse: error received from API")

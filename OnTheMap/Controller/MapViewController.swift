@@ -23,10 +23,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
+        
+        mapView.delegate = self
 
         // TODO Set initial location in Honolulu
 //        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
 //        mapView.centerToLocation(initialLocation)
+    }
+    
+    @IBAction func logoutClick(_ sender: UIButton) {
+        APIClient.logout()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func refreshClick(_ sender: UIButton) {
+        APIClient.getStudentLocation(completion: handleStudentResponse(success:error:))
     }
     
     func handleStudentResponse(success: [StudentInformation]?, error: Error?) {
@@ -46,18 +57,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
-        var view: MKMarkerAnnotationView
-        let identifier = "studentInformation"
-        if annotation is MKUserLocation {
-            //return nil so map view draws "blue dot" for standard user location
+        guard let annotation = annotation as? MapModel else {
             return nil
         }
-        // other code...
+        var view: MKMarkerAnnotationView
+        let identifier = "studentInformation"
         if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
             dequeuedView.annotation = annotation
             view = dequeuedView
         } else {
-          // 5
             view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)

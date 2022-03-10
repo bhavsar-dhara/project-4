@@ -47,7 +47,7 @@ class APIClient {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         // TODO - encoding a JSON body from a string, can also use a Codable struct
         let reqString = "{\"udacity\": {\"username\": \"" + username + "\", \"password\": \"" + password + "\"}}"
-         print(reqString)
+//        print(reqString)
         request.httpBody = reqString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
 //            print("login: data: ", data!)
@@ -62,7 +62,7 @@ class APIClient {
                 return
             }
             let newData = removeExtraDataFromResponse(originalData: data)
-            print(String(data: newData, encoding: .utf8)!)
+//            print(String(data: newData, encoding: .utf8)!)
             let decoder = JSONDecoder()
             var loginResponse: LoginResponse! = LoginResponse()
             do {
@@ -84,9 +84,6 @@ class APIClient {
                     DispatchQueue.main.async {
                         completion(loginResponse, nil)
                     }
-//                    DispatchQueue.main.async {
-//                        completion(nil, errorResponse)
-//                    }
                 } catch {
                     DispatchQueue.main.async {
                         completion(nil, error)
@@ -114,6 +111,8 @@ class APIClient {
                 return
             }
             let newData = removeExtraDataFromResponse(originalData: data) /* subset response data! */
+            Auth.sessionId = ""
+            Auth.accountKey = ""
             print(String(data: newData, encoding: .utf8)!)
         }
         task.resume()
@@ -131,7 +130,7 @@ class APIClient {
             }
             
             if data != nil {
-                print(String(data: data!, encoding: .utf8)!)
+//                print(String(data: data!, encoding: .utf8)!)
                 let decoder = JSONDecoder()
                 
                 do{

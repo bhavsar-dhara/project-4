@@ -14,6 +14,4 @@ class CustomNavBarController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
 }
