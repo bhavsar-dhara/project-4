@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -31,17 +31,38 @@ class LoginViewController: UIViewController {
         self.signupTextView.attributedText = attributedString
         self.signupTextView.isUserInteractionEnabled = true
         self.signupTextView.isEditable = false
+        self.signupTextView.textAlignment = .center
 
         // Set how links should appear: blue and underlined
         self.signupTextView.linkTextAttributes = [
-            .foregroundColor: UIColor.blue,
-            .underlineStyle: NSUnderlineStyle.single.rawValue
+            .foregroundColor: UIColor.blue
         ]
     }
     
-    @IBAction func signUp() {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+            UIApplication.shared.open(URL) { success in
+                if success {
+                    print("The URL was delivered successfully.")
+                } else {
+                    print("The URL failed to open.")
+                }
+            }
+            return false
+        }
+    
+    @IBAction func signUp(url: String) {
 //        TODO
-//        UIApplication.shared.open(url)
+        if let appURL = URL(string: "https://auth.udacity.com/sign-up?next=https://classroom.udacity.com") {
+            UIApplication.shared.open(appURL) { success in
+                if success {
+                    print("The URL was delivered successfully.")
+                } else {
+                    print("The URL failed to open.")
+                }
+            }
+        } else {
+            print("Invalid URL specified.")
+        }
     }
     
     @IBAction func loginClick(_ sender: UIButton) {

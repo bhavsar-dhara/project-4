@@ -79,6 +79,20 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
         selectedIndex = indexPath.row
         // TODO -< launch Safari & open link associated with the row
 //        performSegue(withIdentifier: "showDetail", sender: nil)
+        let location = LocationModel.locationList[indexPath.row]
+        let url = location.mediaURL
+        print("URL: ", url)
+        if let appURL = URL(string: url) {
+            UIApplication.shared.open(appURL) { success in
+                if success {
+                    print("The URL was delivered successfully.")
+                } else {
+                    print("The URL failed to open.")
+                }
+            }
+        } else {
+            print("Invalid URL specified.")
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

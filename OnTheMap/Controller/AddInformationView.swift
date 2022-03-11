@@ -8,10 +8,16 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class AddInformationView: UIViewController {
     
-    
+    @IBOutlet weak var worldView: UIImageView!
+    @IBOutlet weak var locationView: UITextField!
+    @IBOutlet weak var linkView: UITextField!
+    @IBOutlet weak var findLocationBtn: UIButton!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var finishBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +25,14 @@ class AddInformationView: UIViewController {
     
     @IBAction func cancelClick(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func findLocationClick(_ sender: UIButton) {
+        
+    }
+
+    @IBAction func finishClick(_ sender: UIButton) {
+        
     }
     
 }

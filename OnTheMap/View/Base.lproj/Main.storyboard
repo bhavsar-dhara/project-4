@@ -260,6 +260,14 @@
                             <constraint firstItem="shP-qs-Wmg" firstAttribute="top" secondItem="Lx1-8t-iiS" secondAttribute="bottom" constant="20" id="wVl-iE-6lg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="findLocationBtn" destination="vgz-Bh-3PA" id="Lba-Ny-9e2"/>
+                        <outlet property="finishBtn" destination="7Os-G8-CAT" id="rmV-te-kPP"/>
+                        <outlet property="linkView" destination="shP-qs-Wmg" id="lan-Vu-edU"/>
+                        <outlet property="locationView" destination="Lx1-8t-iiS" id="gFO-RK-wsi"/>
+                        <outlet property="mapView" destination="ODv-6a-PCK" id="LZy-Tg-rm5"/>
+                        <outlet property="worldView" destination="cTu-EB-I9M" id="jw4-x3-X5Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3V-Dk-o5I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

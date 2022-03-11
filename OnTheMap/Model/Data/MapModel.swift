@@ -14,10 +14,12 @@ class MapModel: NSObject, MKAnnotation {
     var title: String?
     var coordinate: CLLocationCoordinate2D
     var subtitle: String?
+    var info: String
     
-    init(name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, url: String) {
+    init(name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, location: String, url: String) {
         self.title = name
         self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        self.subtitle = url
+        self.subtitle = location
+        self.info = url
     }
 }

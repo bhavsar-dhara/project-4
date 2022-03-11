@@ -47,7 +47,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             // TODO
             var mapPoint: MapModel!
             success?.forEach { info in
-                mapPoint = MapModel(name: info.firstName + " " + info.lastName, latitude: Double(info.latitude), longitude: Double(info.longitude), url: info.mapString)
+                mapPoint = MapModel(name: info.firstName + " " + info.lastName, latitude: Double(info.latitude), longitude: Double(info.longitude), location: info.mapString, url: info.mediaURL)
                 MapLocationModel.locationList.append(mapPoint)
             }
             mapView.addAnnotations(MapLocationModel.locationList)
@@ -72,6 +72,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         return view
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let mapObj = view.annotation as! MapModel
+        if let url = URL(string: mapObj.info) {
+            UIApplication.shared.open(url) { success in
+                if success {
+                    print("The URL was delivered successfully.")
+                } else {
+                    print("The URL failed to open.")
+                }
+            }
+        } else {
+            print("Invalid URL specified.")
+        }
     }
     
 }
