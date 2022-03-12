@@ -10,6 +10,6 @@ import Foundation
 
 struct LocationCreation: Codable {
     
-    let creationAt: Date
+    let createdAt: String
     let objectId: String
 }

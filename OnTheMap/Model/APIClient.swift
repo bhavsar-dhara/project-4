@@ -151,6 +151,43 @@ class APIClient {
         task.resume()
     }
     
+    class func postStudentLocation(firstName: String, lastName: String, mapString: String, mediaURL: String, latitude: Float, longitude: Float, completion: @escaping (LocationCreation?, Error?) -> Void) {
+        let randomInt = Int.random(in: 1..<5)
+        let body = CreateStudentInfo(uniqueKey: String(randomInt), firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
+        var request = URLRequest(url: Endpoints.getStudentLocation.url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try! JSONEncoder().encode(body)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+          if error != nil {
+            // Handle error…
+            print("Error response received with postStudentLocation http request")
+            DispatchQueue.main.async {
+                completion(nil, error)
+            }
+            return
+          }
+          if data != nil {
+                  print(String(data: data!, encoding: .utf8)!)
+              let decoder = JSONDecoder()
+              do{
+                  let response = try
+                      decoder.decode(LocationCreation.self, from: data!)
+                  print("Data decoded")
+                  DispatchQueue.main.async {
+                      completion(response, nil)
+                  }
+              } catch {
+                  print("Error with the data response received or decoded")
+                  DispatchQueue.main.async {
+                      completion (nil, error)
+                  }
+              }
+          }
+        }
+        task.resume()
+    }
+    
     
     
 }
