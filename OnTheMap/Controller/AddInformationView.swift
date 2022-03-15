@@ -88,7 +88,7 @@ class AddInformationView: UIViewController, MKMapViewDelegate {
 
     @IBAction func finishClick(_ sender: UIButton) {
         print("onFinishClick")
-        APIClient.postStudentLocation(firstName: userDetails.firstName, lastName: userDetails.lastName, mapString: String(self.locationView.text ?? ""), mediaURL: String(self.linkView.text ?? ""), latitude: Float(coordinate.latitude), longitude: Float(coordinate.longitude), completion: self.handlePostCreationResponse(success:error:))
+        APIClient.postStudentLocation(firstName: userDetails.first_name, lastName: userDetails.last_name, mapString: String(self.locationView.text ?? ""), mediaURL: String(self.linkView.text ?? ""), latitude: Float(coordinate.latitude), longitude: Float(coordinate.longitude), completion: self.handlePostCreationResponse(success:error:))
     }
     
     func handlePostCreationResponse(success: LocationCreation?, error:Error?) {

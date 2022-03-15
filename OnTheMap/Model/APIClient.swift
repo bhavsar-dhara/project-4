@@ -70,7 +70,7 @@ class APIClient {
                 // print("login: responseObject: ", responseObject)
                 Auth.sessionId = responseObject.session.id
                 Auth.accountKey = responseObject.account.key
-                print("login: auth: ", Auth.sessionId, ", ", Auth.accountKey)
+//                print("login: auth: ", Auth.sessionId, ", ", Auth.accountKey)
                 loginResponse.sessionDetails = responseObject
                 DispatchQueue.main.async {
                     completion(loginResponse, nil)
@@ -201,15 +201,16 @@ class APIClient {
             }
           
             if data != nil {
+//                print(String(data: data!, encoding: .utf8)!)
                 let newData = removeExtraDataFromResponse(originalData: data)/* subset response data! */
-                print(String(data: newData, encoding: .utf8)!)
+//                print(String(data: newData, encoding: .utf8)!)
                 let decoder = JSONDecoder()
                 do{
                     let response = try
-                        decoder.decode(User.self, from: data!)
+                        decoder.decode(UserDetails.self, from: newData)
                     print("Data decoded")
                     DispatchQueue.main.async {
-                        completion(response.user, nil)
+                        completion(response, nil)
                     }
                 } catch {
                     print("Error with the data response received or decoded")

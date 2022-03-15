@@ -224,7 +224,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="FINISH"/>
                                 <connections>
-                                    <action selector="finishClick:" destination="jfW-3H-EoW" eventType="touchDown" id="dt3-dK-2sN"/>
                                     <action selector="finishClick:" destination="jfW-3H-EoW" eventType="touchUpInside" id="w1C-lh-xRk"/>
                                 </connections>
                             </button>

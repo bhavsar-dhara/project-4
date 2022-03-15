@@ -53,6 +53,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.addAnnotations(MapLocationModel.locationList)
         } else {
             print("MapVC: ", error?.localizedDescription ?? "")
+            // TODO : show error dialog
         }
     }
     
