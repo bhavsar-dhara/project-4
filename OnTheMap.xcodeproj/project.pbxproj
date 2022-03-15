@@ -22,6 +22,12 @@
 		D661EC2F271A1EF9003F124F /* OnTheMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661EC2E271A1EF9003F124F /* OnTheMapUITests.swift */; };
 		D6A7275E27DA9847006EC2CC /* AddInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A7275D27DA9847006EC2CC /* AddInformationView.swift */; };
 		D6A7276327DC6DDD006EC2CC /* CreateStudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A7276227DC6DDD006EC2CC /* CreateStudentInfo.swift */; };
+		D6A727AA27E12636006EC2CC /* EmailDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A727A927E12636006EC2CC /* EmailDetails.swift */; };
+		D6A727AF27E1299E006EC2CC /* GaurdDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A727AE27E1299E006EC2CC /* GaurdDetails.swift */; };
+		D6A727B427E129BB006EC2CC /* EmailPrefsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A727B327E129BB006EC2CC /* EmailPrefsDetails.swift */; };
+		D6A727B927E129CF006EC2CC /* MembershipDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A727B827E129CF006EC2CC /* MembershipDetails.swift */; };
+		D6A727BE27E12A3D006EC2CC /* GroupRefDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A727BD27E12A3D006EC2CC /* GroupRefDetails.swift */; };
+		D6A727C327E133AD006EC2CC /* PermissionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A727C227E133AD006EC2CC /* PermissionDetails.swift */; };
 		D6A9325B276AEB82001F7170 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9325A276AEB82001F7170 /* StudentLocation.swift */; };
 		D6A9325D276B9FE8001F7170 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9325C276B9FE8001F7170 /* APIClient.swift */; };
 		D6A93261276BB603001F7170 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A93260276BB603001F7170 /* Account.swift */; };
@@ -77,6 +83,12 @@
 		D661EC30271A1EF9003F124F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6A7275D27DA9847006EC2CC /* AddInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInformationView.swift; sourceTree = "<group>"; };
 		D6A7276227DC6DDD006EC2CC /* CreateStudentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentInfo.swift; sourceTree = "<group>"; };
+		D6A727A927E12636006EC2CC /* EmailDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDetails.swift; sourceTree = "<group>"; };
+		D6A727AE27E1299E006EC2CC /* GaurdDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaurdDetails.swift; sourceTree = "<group>"; };
+		D6A727B327E129BB006EC2CC /* EmailPrefsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPrefsDetails.swift; sourceTree = "<group>"; };
+		D6A727B827E129CF006EC2CC /* MembershipDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetails.swift; sourceTree = "<group>"; };
+		D6A727BD27E12A3D006EC2CC /* GroupRefDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRefDetails.swift; sourceTree = "<group>"; };
+		D6A727C227E133AD006EC2CC /* PermissionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionDetails.swift; sourceTree = "<group>"; };
 		D6A9325A276AEB82001F7170 /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		D6A9325C276B9FE8001F7170 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D6A93260276BB603001F7170 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -227,6 +239,12 @@
 				D6A9326E276CE228001F7170 /* User.swift */,
 				D65EAF7C27D7C4F000A9332F /* ErrorResponse.swift */,
 				D65EAF8127D7F9D300A9332F /* LoginResponse.swift */,
+				D6A727A927E12636006EC2CC /* EmailDetails.swift */,
+				D6A727AE27E1299E006EC2CC /* GaurdDetails.swift */,
+				D6A727B327E129BB006EC2CC /* EmailPrefsDetails.swift */,
+				D6A727B827E129CF006EC2CC /* MembershipDetails.swift */,
+				D6A727BD27E12A3D006EC2CC /* GroupRefDetails.swift */,
+				D6A727C227E133AD006EC2CC /* PermissionDetails.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -385,7 +403,9 @@
 				D6D04678278E8A6E00B98210 /* CustomNavBarController.swift in Sources */,
 				D65EAF8A27D8F81C00A9332F /* MapModel.swift in Sources */,
 				D6A93265276BB7F2001F7170 /* SessionDetails.swift in Sources */,
+				D6A727C327E133AD006EC2CC /* PermissionDetails.swift in Sources */,
 				D6D04674278E6A2600B98210 /* TableViewController.swift in Sources */,
+				D6A727AF27E1299E006EC2CC /* GaurdDetails.swift in Sources */,
 				D6A9325B276AEB82001F7170 /* StudentLocation.swift in Sources */,
 				D6A93269276CE069001F7170 /* LocationCreation.swift in Sources */,
 				D6A932B42770E0AD001F7170 /* LoginRequest.swift in Sources */,
@@ -393,13 +413,17 @@
 				D661EC11271A1EF8003F124F /* LoginViewController.swift in Sources */,
 				D6A9326D276CE176001F7170 /* UserDetails.swift in Sources */,
 				D661EC0D271A1EF8003F124F /* AppDelegate.swift in Sources */,
+				D6A727BE27E12A3D006EC2CC /* GroupRefDetails.swift in Sources */,
 				D65EAF8F27D903E500A9332F /* MapLocationModel.swift in Sources */,
 				D6A9325D276B9FE8001F7170 /* APIClient.swift in Sources */,
 				D6A9326B276CE08F001F7170 /* LocationUpdation.swift in Sources */,
 				D65EAF8227D7F9D300A9332F /* LoginResponse.swift in Sources */,
 				D6A93267276CDA58001F7170 /* StudentInformation.swift in Sources */,
 				D661EC0F271A1EF8003F124F /* SceneDelegate.swift in Sources */,
+				D6A727B427E129BB006EC2CC /* EmailPrefsDetails.swift in Sources */,
 				D65EAF7D27D7C4F000A9332F /* ErrorResponse.swift in Sources */,
+				D6A727B927E129CF006EC2CC /* MembershipDetails.swift in Sources */,
+				D6A727AA27E12636006EC2CC /* EmailDetails.swift in Sources */,
 				D6A93261276BB603001F7170 /* Account.swift in Sources */,
 				D6D04676278E820A00B98210 /* MapViewController.swift in Sources */,
 			);

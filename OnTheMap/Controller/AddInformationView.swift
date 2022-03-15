@@ -22,9 +22,12 @@ class AddInformationView: UIViewController, MKMapViewDelegate {
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     
     var coordinate: CLLocationCoordinate2D!
+    var userDetails: UserDetails!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        APIClient.getUserDetails(completion: self.handleUserDetailsFetched(success:error:))
         
         mapView.delegate = self
     }
@@ -85,7 +88,7 @@ class AddInformationView: UIViewController, MKMapViewDelegate {
 
     @IBAction func finishClick(_ sender: UIButton) {
         print("onFinishClick")
-        APIClient.postStudentLocation(firstName: "Jane..", lastName: "Doe", mapString: String(self.locationView.text ?? ""), mediaURL: String(self.linkView.text ?? ""), latitude: Float(coordinate.latitude), longitude: Float(coordinate.longitude), completion: self.handlePostCreationResponse(success:error:))
+        APIClient.postStudentLocation(firstName: userDetails.firstName, lastName: userDetails.lastName, mapString: String(self.locationView.text ?? ""), mediaURL: String(self.linkView.text ?? ""), latitude: Float(coordinate.latitude), longitude: Float(coordinate.longitude), completion: self.handlePostCreationResponse(success:error:))
     }
     
     func handlePostCreationResponse(success: LocationCreation?, error:Error?) {
@@ -96,6 +99,15 @@ class AddInformationView: UIViewController, MKMapViewDelegate {
             print("AddInfoVC: ", error?.localizedDescription ?? "")
             // TODO
             showErrorAlert(title: "Error while creating new student location", message: error?.localizedDescription ?? "")
+        }
+    }
+    
+    func handleUserDetailsFetched(success: UserDetails?, error: Error?) {
+        if success != nil {
+            print("AddInfoVC: user details: ", success ?? "")
+            userDetails = success
+        } else {
+            print("AddInfoVC: error fetching user details: ", error?.localizedDescription ?? "")
         }
     }
     

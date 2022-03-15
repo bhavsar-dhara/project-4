@@ -22,15 +22,15 @@ class APIClient {
         case createStudentLocation
         case updateStudentLocation
         case handleSession
-        case getUserDetails
+        case getUserDetails(String)
         
         var stringValue: String {
             switch self {
-            case .getStudentLocation: return Endpoints.base + "/StudentLocation"
+            case .getStudentLocation: return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
             case .createStudentLocation: return Endpoints.base + "/StudentLocation"
             case .updateStudentLocation: return Endpoints.base + "/StudentLocation/"
             case .handleSession: return Endpoints.base + "/session"
-            case .getUserDetails: return Endpoints.base + "/users/" + ""
+            case .getUserDetails(let userId): return Endpoints.base + "/users/" + userId
             }
         }
         
@@ -188,7 +188,39 @@ class APIClient {
         task.resume()
     }
     
-    
+    class func getUserDetails(completion: @escaping (UserDetails?, Error?) -> Void) {
+        let request = URLRequest(url: Endpoints.getUserDetails(self.Auth.accountKey).url)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if error != nil {
+                // Handle error...
+                print("Error response received with getUserDetails http request")
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+                return
+            }
+          
+            if data != nil {
+                let newData = removeExtraDataFromResponse(originalData: data)/* subset response data! */
+                print(String(data: newData, encoding: .utf8)!)
+                let decoder = JSONDecoder()
+                do{
+                    let response = try
+                        decoder.decode(User.self, from: data!)
+                    print("Data decoded")
+                    DispatchQueue.main.async {
+                        completion(response.user, nil)
+                    }
+                } catch {
+                    print("Error with the data response received or decoded")
+                    DispatchQueue.main.async {
+                        completion (nil, error)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
     
 }
 

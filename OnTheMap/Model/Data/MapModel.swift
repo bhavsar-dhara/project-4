@@ -19,7 +19,7 @@ class MapModel: NSObject, MKAnnotation {
     init(name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, location: String, url: String) {
         self.title = name
         self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        self.subtitle = location
+        self.subtitle = url // updating based on the code review suggestion
         self.info = url
     }
 }
