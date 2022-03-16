@@ -15,8 +15,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITabBarController
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     
-    var parentDelegate: DisplayErrorAlert?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -100,21 +98,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITabBarController
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 
         self.present(alertVC, animated: true, completion: nil)
-        
-//        self.show(alertVC, sender: nil)
-
-//        var rootViewController = UIApplication.shared.windows.first?.rootViewController
-//        print("rootViewController = " + (rootViewController?.presentationController.debugDescription)!)
-//        if let navigationController = rootViewController as? UINavigationController {
-//            print("navigation controller")
-//            rootViewController = navigationController.viewControllers.first
-//        }
-//        if let tabBarController = rootViewController as? UITabBarController {
-//            print("tab bar controller")
-//            rootViewController = tabBarController.selectedViewController
-//        }
-//
-//        rootViewController?.show(alertVC, sender: nil) ?? show(alertVC, sender: nil)
     }
     
 }

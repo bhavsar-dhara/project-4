@@ -185,7 +185,7 @@
         <!--Information Posting View Controller-->
         <scene sceneID="9sG-oi-QHa">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="jfW-3H-EoW" userLabel="Information Posting View Controller" customClass="AddInformationView" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="jfW-3H-EoW" userLabel="Information Posting View Controller" customClass="AddInformationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sK5-Gh-OT1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

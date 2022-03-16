@@ -26,7 +26,7 @@ class APIClient {
         
         var stringValue: String {
             switch self {
-            case .getStudentLocation: return Endpoints.base + "/StudentINLocation?limit=100&order=-updatedAt"
+            case .getStudentLocation: return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
             case .createStudentLocation: return Endpoints.base + "/StudentLocation"
             case .updateStudentLocation: return Endpoints.base + "/StudentLocation/"
             case .handleSession: return Endpoints.base + "/session"
