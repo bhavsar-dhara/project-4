@@ -15,3 +15,7 @@ class CustomNavBarController: UINavigationController {
         super.viewDidLoad()
     }
 }
+
+protocol DisplayErrorAlert {
+    func showErrorDialogBox(message: String)
+}

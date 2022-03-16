@@ -11,7 +11,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class AddInformationView: UIViewController, MKMapViewDelegate {
+class AddInformationViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var worldView: UIImageView!
     @IBOutlet weak var locationView: UITextField!

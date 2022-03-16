@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
-class TableViewController: UIViewController {
+class TableViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     var selectedIndex = 0
+    var parentDelegate: DisplayErrorAlert?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,29 @@ class TableViewController: UIViewController {
             self.tableView.reloadData()
         } else {
             print("TableVC: ", error?.localizedDescription ?? "")
+            showErrorDialogBox(message: error?.localizedDescription ?? "")
         }
+    }
+    
+    func showErrorDialogBox(message: String) {
+        let alertVC = UIAlertController(title: "Error Encountered", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alertVC, animated: true, completion: nil)
+        
+//        self.show(alertVC, sender: nil)
+        
+//        var rootViewController = UIApplication.shared.windows.first?.rootViewController
+//        if let navigationController = rootViewController as? UINavigationController {
+//            print("navigation controller")
+//            rootViewController = navigationController.viewControllers.first
+//        }
+//        if let tabBarController = rootViewController as? UITabBarController {
+//            print("tab bar controller")
+//            rootViewController = tabBarController.selectedViewController
+//        }
+//
+//        rootViewController?.show(alertVC, sender: nil) ?? show(alertVC, sender: nil)
     }
     
 }
@@ -88,10 +111,12 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
                     print("The URL was delivered successfully.")
                 } else {
                     print("The URL failed to open.")
+                    self.parentDelegate?.showErrorDialogBox(message: "The URL failed to open.")
                 }
             }
         } else {
             print("Invalid URL specified.")
+            parentDelegate?.showErrorDialogBox(message: "Invalid URL specified.")
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

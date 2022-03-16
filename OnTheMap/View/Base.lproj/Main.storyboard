@@ -352,10 +352,10 @@
             </objects>
             <point key="canvasLocation" x="1720" y="493"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="f8q-FF-0qn">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="quP-8O-BRh" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="quP-8O-BRh" customClass="TabBarViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="dfV-Wa-0VQ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XxW-Uq-Ra8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UITabBarControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
+    
+    var parentDelegate: DisplayErrorAlert?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +55,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.addAnnotations(MapLocationModel.locationList)
         } else {
             print("MapVC: ", error?.localizedDescription ?? "")
-            // TODO : show error dialog
+            // show error dialog
+            showErrorDialogBox(message: error?.localizedDescription ?? "")
         }
     }
     
@@ -83,11 +86,35 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                     print("The URL was delivered successfully.")
                 } else {
                     print("The URL failed to open.")
+                    self.showErrorDialogBox(message: "The URL failed to open.")
                 }
             }
         } else {
             print("Invalid URL specified.")
+            showErrorDialogBox(message: "Invalid URL specified.")
         }
+    }
+    
+    func showErrorDialogBox(message: String) {
+        let alertVC = UIAlertController(title: "Error Encountered", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        self.present(alertVC, animated: true, completion: nil)
+        
+//        self.show(alertVC, sender: nil)
+
+//        var rootViewController = UIApplication.shared.windows.first?.rootViewController
+//        print("rootViewController = " + (rootViewController?.presentationController.debugDescription)!)
+//        if let navigationController = rootViewController as? UINavigationController {
+//            print("navigation controller")
+//            rootViewController = navigationController.viewControllers.first
+//        }
+//        if let tabBarController = rootViewController as? UITabBarController {
+//            print("tab bar controller")
+//            rootViewController = tabBarController.selectedViewController
+//        }
+//
+//        rootViewController?.show(alertVC, sender: nil) ?? show(alertVC, sender: nil)
     }
     
 }
